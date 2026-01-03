@@ -1,0 +1,7 @@
+{
+  "name": " Farmácia Bermat - Sistema de Faturação Farmacêutica",
+  "description": "Um sistema completo de gestão e faturação para a Farmácia Bermat, incluindo controlo de lotes, validades, stock e relatórios detalhados com integração de IA para auditoria.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
