@@ -1,8 +1,8 @@
 
 import React, { useState, useMemo } from 'react';
-import { Invoice, Product, Batch, SessionLog } from '../types';
+import { Invoice, Product, Batch, SessionLog } from '../types.ts';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { auditSalesData } from '../services/geminiService';
+import { auditSalesData } from '../services/geminiService.ts';
 
 interface ReportModuleProps {
   invoices: Invoice[];
@@ -17,7 +17,6 @@ const ReportModule: React.FC<ReportModuleProps> = ({ invoices, products, batches
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const salesData = useMemo(() => {
-    // Top 5 products
     const productCounts: Record<string, { name: string, qty: number, total: number }> = {};
     invoices.forEach(inv => {
       inv.items.forEach(item => {
@@ -36,7 +35,6 @@ const ReportModule: React.FC<ReportModuleProps> = ({ invoices, products, batches
 
   const totalRevenue = useMemo(() => invoices.reduce((acc, inv) => acc + inv.total, 0), [invoices]);
   const totalProfit = useMemo(() => {
-    // Simplified profit calculation
     return invoices.reduce((acc, inv) => {
       const costs = inv.items.reduce((sum, item) => {
         const prod = products.find(p => p.id === item.productId);

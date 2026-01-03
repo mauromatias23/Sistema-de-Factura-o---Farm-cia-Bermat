@@ -1,24 +1,24 @@
 
 import React, { useState, useMemo, useEffect } from 'react';
-import Layout from './components/Layout';
+import Layout from './components/Layout.tsx';
 import { 
   User, Product, Batch, Customer, Invoice, SessionLog, UserRole 
-} from './types';
+} from './types.ts';
 import { 
   INITIAL_USERS, INITIAL_PRODUCTS, INITIAL_BATCHES, INITIAL_CUSTOMERS 
-} from './constants';
+} from './constants.ts';
 
 // Modules
-import LoginModule from './modules/LoginModule';
-import Dashboard from './modules/Dashboard';
-import ProductModule from './modules/ProductModule';
-import BatchModule from './modules/BatchModule';
-import BillingModule from './modules/BillingModule';
-import StockModule from './modules/StockModule';
-import CustomerModule from './modules/CustomerModule';
-import ReportModule from './modules/ReportModule';
-import EmployeeModule from './modules/EmployeeModule';
-import ProFormaModule from './modules/ProFormaModule';
+import LoginModule from './modules/LoginModule.tsx';
+import Dashboard from './modules/Dashboard.tsx';
+import ProductModule from './modules/ProductModule.tsx';
+import BatchModule from './modules/BatchModule.tsx';
+import BillingModule from './modules/BillingModule.tsx';
+import StockModule from './modules/StockModule.tsx';
+import CustomerModule from './modules/CustomerModule.tsx';
+import ReportModule from './modules/ReportModule.tsx';
+import EmployeeModule from './modules/EmployeeModule.tsx';
+import ProFormaModule from './modules/ProFormaModule.tsx';
 
 const App: React.FC = () => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
